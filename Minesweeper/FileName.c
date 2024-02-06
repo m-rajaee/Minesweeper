@@ -4,6 +4,7 @@
 #include <io.h>
 #include <fcntl.h>
 #pragma warning (disable:4996)
+#define gotoxy(x,y) wprintf(L"\033[%d;%dH", (y), (x))
 //---------------------------------------------
 // Variables
 //---------------------------------------------
@@ -110,13 +111,13 @@ int main() {
 				if (end == 'z')
 					break;
 				//timer
-				system("cls || clear");
+				gotoxy(0, 0);
 				b = clock();
 				if (end == ' ')
 					a += (clock() - b);
 				///////////
 				if (end == ' ' && checkfreespace1() == 1) {
-					system("cls || clear");
+					gotoxy(0, 0);
 					wprintf(L"\033[35m\t\t\t\t\t   \u2660%d\033[0m", parcham_karbar1);
 					playermove1();
 
@@ -146,7 +147,7 @@ int main() {
 								board1[i][j] = '+';
 						}
 					}
-					system("cls || clear");
+					gotoxy(0, 0);
 					wprintf(L"\033[96m\t\t\t\t\t  %d : %d", ((b - a) / 1000) / 60, ((b - a) / 1000) % 60);
 					printboard1();
 					wprintf(L"\033[31m\t\t\t\t       You've lost!\n\n\033[0m");
@@ -166,13 +167,13 @@ int main() {
 				if (end == 'z')
 					break;
 				//timer
-				system("cls || clear");
+				gotoxy(0, 0);
 				b = clock();
 				if (end == ' ')
 					a += (clock() - b);
 				///////////
 				if (end == ' ' && checkfreespace2() == 1) {
-					system("cls || clear");
+					gotoxy(0, 0);
 					wprintf(L"\033[35m\t\t\t\t\t   \u2660%d\033[0m", parcham_karbar2);
 					playermove2();
 				}
@@ -200,7 +201,7 @@ int main() {
 								board2[i][j] = '+';
 						}
 					}
-					system("cls || clear");
+					gotoxy(0, 0);
 					wprintf(L"\033[96m\t\t\t\t\t  %d : %d", ((b - a) / 1000) / 60, ((b - a) / 1000) % 60);
 					printboard2();
 					wprintf(L"\033[31m\t\t\t\t       You've lost!\n\n\033[0m");
