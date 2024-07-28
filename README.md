@@ -1,1 +1,1 @@
-A Mini Project For BP Class Mid-term at Isfahan University of Technology
+A Mini Project For BP Class MidTerm at Isfahan University of Technology
